@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="平衡车.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.023314 -0.046399 1.1547"
+        rpy="0 0 0" />
+      <mass
+        value="1.0014" />
+      <inertia
+        ixx="0.00031293"
+        ixy="-1.2095E-35"
+        ixz="0"
+        iyy="0.021019"
+        iyz="0"
+        izz="0.021019" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="mid_link">
+    <inertial>
+      <origin
+        xyz="0.023314 0.19288 2.2204E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.0105" />
+      <inertia
+        ixx="0.022052"
+        ixy="4.0499E-20"
+        ixz="0"
+        iyy="0.00045265"
+        iyz="2.5234E-19"
+        izz="0.02202" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/mid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/mid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mid"
+    type="fixed">
+    <origin
+      xyz="0 -1.1547 -0.046399"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="mid_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_link">
+    <inertial>
+      <origin
+        xyz="0.025 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.6935" />
+      <inertia
+        ixx="0.0089968"
+        ixy="-2.0277E-35"
+        ixz="-1.0646E-35"
+        iyy="0.0048512"
+        iyz="5.3745E-35"
+        izz="0.0048512" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left"
+    type="continuous">
+    <origin
+      xyz="0.22331 -1.1547 -0.046399"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="-0.025 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.6935" />
+      <inertia
+        ixx="0.0089968"
+        ixy="-2.0277E-35"
+        ixz="-1.0646E-35"
+        iyy="0.0048512"
+        iyz="5.3745E-35"
+        izz="0.0048512" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平衡车.SLDASM/meshes/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right"
+    type="continuous">
+    <origin
+      xyz="-0.17669 -1.1547 -0.046399"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

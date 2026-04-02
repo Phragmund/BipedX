@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="FootWheel">
+  <mujoco>
+    <compiler meshdir="/home/phragmund/FootWheel/meshes" balanceinertia="true" discardvisual="false"/>
+  </mujoco>
+  
+  <link name="world"></link>
+  <joint name="floating_base_joint" type="floating">
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.21102 0.16764 0.95856"
+        rpy="0 0 0" />
+      <mass
+        value="12.048" />
+      <inertia
+        ixx="0.096862"
+        ixy="1.9643E-18"
+        ixz="5.982E-18"
+        iyy="0.33766"
+        iyz="1.9892E-18"
+        izz="0.25381" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LFU_Link">
+    <inertial>
+      <origin
+        xyz="-0.075 -0.005 0.0033736"
+        rpy="0 0 0" />
+      <mass
+        value="0.078366" />
+      <inertia
+        ixx="1.5653E-05"
+        ixy="-6.4433E-22"
+        ixz="4.3199E-20"
+        iyy="0.00019382"
+        iyz="7.1993E-22"
+        izz="0.00017947" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFU_J"
+    type="revolute">
+    <origin
+      xyz="-0.011018 -0.79856 0.15749"
+      rpy="0 -1.2831 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LFU_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="LFD_Link">
+    <inertial>
+      <origin
+        xyz="0.1 0.005 -1.7347E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.088009" />
+      <inertia
+        ixx="1.2735E-05"
+        ixy="-1.786E-21"
+        ixz="6.0457E-20"
+        iyy="0.00037097"
+        iyz="2.103E-22"
+        izz="0.0003597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFD_J"
+    type="revolute">
+    <origin
+      xyz="-0.15 0 0"
+      rpy="0 1.1789 0" />
+    <parent
+      link="LFU_Link" />
+    <child
+      link="LFD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="LFW_Link">
+    <inertial>
+      <origin
+        xyz="-0.025161 -9.7145E-17 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.39735" />
+      <inertia
+        ixx="0.00050053"
+        ixy="-1.0594E-22"
+        ixz="-6.7504E-22"
+        iyy="0.0003324"
+        iyz="2.0329E-20"
+        izz="0.0003324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFW_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LFW_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFW_J"
+    type="continuous">
+    <origin
+      xyz="0.2 0.01 0"
+      rpy="1.8597 0 -1.5708" />
+    <parent
+      link="LFD_Link" />
+    <child
+      link="LFW_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LBU_Link">
+    <inertial>
+      <origin
+        xyz="-0.075 -0.005 0.0033736"
+        rpy="0 0 0" />
+      <mass
+        value="0.078366" />
+      <inertia
+        ixx="1.5653E-05"
+        ixy="-2.006E-21"
+        ixz="5.421E-20"
+        iyy="0.00019382"
+        iyz="7.8608E-22"
+        izz="0.00017947" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBU_J"
+    type="revolute">
+    <origin
+      xyz="-0.41102 -0.79856 0.15749"
+      rpy="0 -0.83872 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LBU_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="LBD_Link">
+    <inertial>
+      <origin
+        xyz="0.1 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.088009" />
+      <inertia
+        ixx="1.2735E-05"
+        ixy="-1.671E-21"
+        ixz="7.2845E-20"
+        iyy="0.00037097"
+        iyz="-1.6344E-22"
+        izz="0.0003597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBD_J"
+    type="revolute">
+    <origin
+      xyz="-0.15 0 0"
+      rpy="3.1416 1.4555 3.1416" />
+    <parent
+      link="LBU_Link" />
+    <child
+      link="LBD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="LBW_Link">
+    <inertial>
+      <origin
+        xyz="-0.025161 -1.3323E-15 -2.1649E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.39735" />
+      <inertia
+        ixx="0.00050053"
+        ixy="-1.5021E-21"
+        ixz="7.3332E-21"
+        iyy="0.0003324"
+        iyz="0"
+        izz="0.0003324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBW_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/LBW_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBW_J"
+    type="continuous">
+    <origin
+      xyz="0.2 0.01 0"
+      rpy="2.6504 0 -1.5708" />
+    <parent
+      link="LBD_Link" />
+    <child
+      link="LBW_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RFU_Link">
+    <inertial>
+      <origin
+        xyz="-0.075 -0.005 0.0033736"
+        rpy="0 0 0" />
+      <mass
+        value="0.078366" />
+      <inertia
+        ixx="1.5653E-05"
+        ixy="-1.9913E-21"
+        ixz="-4.7857E-20"
+        iyy="0.00019382"
+        iyz="1.3933E-21"
+        izz="0.00017947" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RFU_J"
+    type="revolute">
+    <origin
+      xyz="-0.011018 -1.1086 0.15749"
+      rpy="0 -0.93229 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RFU_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="RFD_Link">
+    <inertial>
+      <origin
+        xyz="0.1 -0.005 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.088009" />
+      <inertia
+        ixx="1.2735E-05"
+        ixy="-1.2773E-21"
+        ixz="2.9646E-20"
+        iyy="0.00037097"
+        iyz="-1.2615E-21"
+        izz="0.0003597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RFD_J"
+    type="revolute">
+    <origin
+      xyz="-0.15 -0.01 0"
+      rpy="3.1416 1.316 3.1416" />
+    <parent
+      link="RFU_Link" />
+    <child
+      link="RFD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="RFW_Link">
+    <inertial>
+      <origin
+        xyz="-0.025161 -3.8858E-16 2.4633E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.39735" />
+      <inertia
+        ixx="0.00050053"
+        ixy="-9.8849E-37"
+        ixz="-7.7659E-22"
+        iyy="0.0003324"
+        iyz="-2.0666E-38"
+        izz="0.0003324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFW_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RFW_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RFW_J"
+    type="continuous">
+    <origin
+      xyz="0.2 -0.01 0"
+      rpy="0.67746 0 1.5708" />
+    <parent
+      link="RFD_Link" />
+    <child
+      link="RFW_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RBU_Link">
+    <inertial>
+      <origin
+        xyz="0.075 0.005 0.0033736"
+        rpy="0 0 0" />
+      <mass
+        value="0.078366" />
+      <inertia
+        ixx="1.5653E-05"
+        ixy="-1.442E-21"
+        ixz="1.152E-19"
+        iyy="0.00019382"
+        iyz="1.092E-21"
+        izz="0.00017947" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBU_J"
+    type="revolute">
+    <origin
+      xyz="-0.41102 -1.1086 0.15749"
+      rpy="0 0.77945 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="RBU_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="RBD_Link">
+    <inertial>
+      <origin
+        xyz="0.1 0.005 1.6653E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.088009" />
+      <inertia
+        ixx="1.2735E-05"
+        ixy="6.0246E-22"
+        ixz="-7.6614E-19"
+        iyy="0.00037097"
+        iyz="-1.7898E-21"
+        izz="0.0003597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBD_J"
+    type="revolute">
+    <origin
+      xyz="0.15 0.01 0"
+      rpy="0 1.5329 0" />
+    <parent
+      link="RBU_Link" />
+    <child
+      link="RBD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+  <link
+    name="RBW_Link">
+    <inertial>
+      <origin
+        xyz="-0.025161 1.3878E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.39735" />
+      <inertia
+        ixx="0.00050053"
+        ixy="-9.8849E-37"
+        ixz="2.2476E-20"
+        iyy="0.0003324"
+        iyz="-2.0666E-38"
+        izz="0.0003324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBW_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://FootWheel/meshes/RBW_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBW_J"
+    type="continuous">
+    <origin
+      xyz="0.2 0.01 0"
+      rpy="-2.4 0 -1.5708" />
+    <parent
+      link="RBD_Link" />
+    <child
+      link="RBW_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

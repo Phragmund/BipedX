@@ -1,0 +1,133 @@
+<mujoco model="FootWheel">
+    <compiler angle="radian" meshdir="/home/phragmund/FootWheel/meshes/" />
+    <size njmax="500" nconmax="100" />
+    <default>
+  <geom 
+    friction="0.9 0.09 0.009"
+    solimp="0.9 0.95 0.001"  
+    solref="0.02 1"          
+    margin="0.01"          
+    condim="6"               
+  />
+</default>
+
+<!-- 恢复地球标准重力，避免低重力导致的动力学异常 -->
+<option timestep="0.001" gravity="0 0 -9.81"/>  
+    <asset>
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="LFU_Link" file="LFU_Link.STL" />
+        <mesh name="LFD_Link" file="LFD_Link.STL" />
+        <mesh name="LFW_Link" file="LFW_Link.STL" />
+        <mesh name="LBU_Link" file="LBU_Link.STL" />
+        <mesh name="LBD_Link" file="LBD_Link.STL" />
+        <mesh name="LBW_Link" file="LBW_Link.STL" />
+        <mesh name="RFU_Link" file="RFU_Link.STL" />
+        <mesh name="RFD_Link" file="RFD_Link.STL" />
+        <mesh name="RFW_Link" file="RFW_Link.STL" />
+        <mesh name="RBU_Link" file="RBU_Link.STL" />
+        <mesh name="RBD_Link" file="RBD_Link.STL" />
+        <mesh name="RBW_Link" file="RBW_Link.STL" />
+    </asset>
+    <worldbody>
+        <geom name="ground" type="plane" pos="0 0 0" size="10 10 0.1"
+        friction="2 1 0.2"
+        rgba="0.8 0.8 0.8 1" condim="3"/>
+        <body name="base_link" pos="0 0 0.15">
+            <inertial pos="-0.21102 0.16764 0.95856" quat="0.5 0.5 0.5 0.5" mass="0.148" diaginertia="0.33766 0.25381 0.096862" />
+            <joint name="floating_base_joint" type="free" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="base_link" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="base_link" />
+            <body name="LFU_Link" pos="-0.011018 -0.79856 0.15749" quat="0.801169 0 -0.598438 0">
+                <inertial pos="-0.075 -0.005 0.0033736" quat="0.5 0.5 0.5 0.5" mass="0.078366" diaginertia="0.00019382 0.00017947 1.5653e-05" />
+                <joint name="LFU_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LFU_Link" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="LFU_Link" />
+                <body name="LFD_Link" pos="-0.15 0 0" quat="0.831247 0 0.555904 0">
+                    <inertial pos="0.1 0.005 0" quat="0.5 0.5 0.5 0.5" mass="0.088009" diaginertia="0.00037097 0.0003597 1.2735e-05" />
+                    <joint name="LFD_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LFD_Link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="LFD_Link" />
+                    <body name="LFW_Link" pos="0.2 0.01 0" quat="0.422817 0.566766 -0.566769 -0.422818">
+                        <inertial pos="-0.025161 0 0" mass="0.39735" diaginertia="0.00050053 0.0003324 0.0003324" />
+                        <joint name="LFW_J" pos="0 0 0" axis="1 0 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LFW_Link" />
+                        <geom type="mesh" rgba="1 1 1 1" mesh="LFW_Link" />
+                    </body>
+                </body>
+            </body>
+            <body name="LBU_Link" pos="-0.41102 -0.79856 0.15749" quat="0.91335 0 -0.407176 0">
+                <inertial pos="-0.075 -0.005 0.0033736" quat="0.5 0.5 0.5 0.5" mass="0.078366" diaginertia="0.00019382 0.00017947 1.5653e-05" />
+                <joint name="LBU_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LBU_Link" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="LBU_Link" />
+                <body name="LBD_Link" pos="-0.15 0 0" quat="0.665191 -2.99299e-07 0.746673 -2.99299e-07">
+                    <inertial pos="0.1 0.005 0" quat="0.5 0.5 0.5 0.5" mass="0.088009" diaginertia="0.00037097 0.0003597 1.2735e-05" />
+                    <joint name="LBD_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LBD_Link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="LBD_Link" />
+                    <body name="LBW_Link" pos="0.2 0.01 0" quat="0.171922 0.685887 -0.68589 -0.171923">
+                        <inertial pos="-0.025161 0 0" mass="0.39735" diaginertia="0.00050053 0.0003324 0.0003324" />
+                        <joint name="LBW_J" pos="0 0 0" axis="1 0 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="LBW_Link" />
+                        <geom type="mesh" rgba="1 1 1 1" mesh="LBW_Link" />
+                    </body>
+                </body>
+            </body>
+            <body name="RFU_Link" pos="-0.011018 -1.1086 0.15749" quat="0.893308 0 -0.449446 0">
+                <inertial pos="-0.075 -0.005 0.0033736" quat="0.5 0.5 0.5 0.5" mass="0.078366" diaginertia="0.00019382 0.00017947 1.5653e-05" />
+                <joint name="RFU_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RFU_Link" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="RFU_Link" />
+                <body name="RFD_Link" pos="-0.15 -0.01 0" quat="0.611536 -6.60006e-07 0.791217 -6.60006e-07">
+                    <inertial pos="0.1 -0.005 0" quat="0.5 0.5 0.5 0.5" mass="0.088009" diaginertia="0.00037097 0.0003597 1.2735e-05" />
+                    <joint name="RFD_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RFD_Link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="RFD_Link" />
+                    <body name="RFW_Link" pos="0.2 -0.01 0" quat="0.666926 0.234964 0.234965 0.666928">
+                        <inertial pos="-0.025161 0 0" mass="0.39735" diaginertia="0.00050053 0.0003324 0.0003324" />
+                        <joint name="RFW_J" pos="0 0 0" axis="1 0 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RFW_Link" />
+                        <geom type="mesh" rgba="1 1 1 1" mesh="RFW_Link" />
+                    </body>
+                </body>
+            </body>
+            <body name="RBU_Link" pos="-0.41102 -1.1086 0.15749" quat="-3.39776e-06 0.379934 -1.39558e-06 -0.925014">
+                <inertial pos="0.075 0.005 0.0033736" quat="0.5 0.5 0.5 0.5" mass="0.078366" diaginertia="0.00019382 0.00017947 1.5653e-05" />
+                <joint name="RBU_J" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.57 1.57" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RBU_Link" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="RBU_Link" />
+                <body name="RBD_Link" pos="0.15 0.01 0" quat="0.720377 0 0.693582 0">
+                    <inertial pos="0.1 0.005 0" quat="0.5 0.5 0.5 0.5" mass="0.088009" diaginertia="0.00037097 0.0003597 1.2735e-05" />
+                    <joint name="RBD_J" pos="0 0 0" axis="0 1 0" limited="true" range="-1.57 1.57" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RBD_Link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="RBD_Link" />
+                    <body name="RBW_Link" pos="0.2 0.01 0" quat="0.256225 -0.65905 0.659052 -0.256226">
+                        <inertial pos="-0.025161 0 0" mass="0.39735" diaginertia="0.00050053 0.0003324 0.0003324" />
+                        <joint name="RBW_J" pos="0 0 0" axis="1 0 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="RBW_Link" />
+                        <geom type="mesh" rgba="1 1 1 1" mesh="RBW_Link" />
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <!-- 定义一个位置控制的执行器，关联到名为 LFD_J 的关节 -->
+        <position name="LFU_J" joint="LFU_J" kp="60.0"/>
+        <position name="LFD_J" joint="LFD_J" kp="60.0"/>
+        <position name="LBU_J" joint="LBU_J" kp="60.0"/>
+        <position name="LBD_J" joint="LBD_J" kp="60.0"/>
+        <position name="RFU_J" joint="RFU_J" kp="60.0"/>
+        <position name="RFD_J" joint="RFD_J" kp="60.0"/>
+        <position name="RBU_J" joint="RBU_J" kp="60.0"/>
+        <position name="RBD_J" joint="RBD_J" kp="60.0"/>
+
+        <velocity name="LFW_J" joint="LFW_J" kv="0.5"/>
+        <velocity name="LBW_J" joint="LBW_J" kv="0.5"/>
+        <velocity name="RFW_J" joint="RFW_J" kv="0.5"/>
+        <velocity name="RBW_J" joint="RBW_J" kv="0.5"/>
+        <!-- 也可以定义速度控制/扭矩控制执行器 -->
+        <!-- <velocity name="LFD_J_vel" joint="LFD_J" kv="10.0"/> -->
+        <!-- <motor name="LFD_J_motor" joint="LFD_J" ctrlrange="-10 10"/> -->
+</actuator>
+</mujoco>

@@ -11,14 +11,17 @@
             "id": "57fb514a87f2be3a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "winter02/matplotlib_guide/Matplotlib使用手册.md",
-                "mode": "source",
-                "source": false
+                "file": "doc/Markdown/轮脚转换-流程框图v1.1.canvas",
+                "viewState": {
+                  "x": -48.380599260113286,
+                  "y": 1692.2158059266892,
+                  "zoom": 0.10500215871049212
+                }
               },
-              "icon": "lucide-file",
-              "title": "Matplotlib使用手册"
+              "icon": "lucide-layout-dashboard",
+              "title": "轮脚转换-流程框图v1.1"
             }
           }
         ]
@@ -78,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "84b9c7e9158ab81d",
@@ -185,12 +188,31 @@
   },
   "active": "57fb514a87f2be3a",
   "lastOpenFiles": [
-    "winter01/git_guides/关于git.md",
-    "winter02/matplotlib_guide/Matplotlib使用手册.md",
-    "winter02/matplotlib_guide/matplotlib_guide.py",
+    "doc/Markdown/轮脚复合移动平台（Demo阶段）项目分工.md",
+    "Code/output/main.exe",
+    "Code/output",
+    "Code/Inc/hal.h",
+    "Code/Src/hal.c",
+    "Code/Src",
+    "Code/Inc",
+    "Code/lib",
+    "Code/src",
+    "Code/hal.h",
+    "doc/Markdown/未命名.md",
+    "doc/Markdown/轮脚转换-流程框图v1.1.canvas",
+    "doc/Markdown/Pasted image 20260331112656.png",
+    "Code/main.c",
+    "doc/Markdown/寒假学习路线参考草稿.md",
+    "需要注意的点.md",
+    "轮脚转换-流程框图v1.1.canvas",
+    "doc/Markdown/需要注意的点.md",
+    "未命名.md",
+    "Pasted image 20260331112656.png",
+    "winter01/README.md",
     "README.md",
-    "winter02/matplotlib_guide",
-    "未命名",
-    "winter02"
+    "轮脚转换-流程框图v1.1 1.canvas",
+    "doc/整机控制流程.md",
+    "winter01/git_guides/关于git.md",
+    "winter02/matplotlib_guide/Matplotlib使用手册.md"
   ]
 }
